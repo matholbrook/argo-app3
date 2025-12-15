@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fearsome-fish
+  namespace: app-foo-prd
+  labels:
+    app: fearsome-fish
+    env: prd
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: fearsome-fish
+    env: prd

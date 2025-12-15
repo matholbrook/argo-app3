@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fearsome-fish
+  namespace: app-foo-prd
+  labels:
+    app: fearsome-fish
+    env: prd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fearsome-fish
+      env: prd
+  template:
+    metadata:
+      labels:
+        app: fearsome-fish
+        env: prd
+    spec:
+      containers:
+      - name: container1
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
