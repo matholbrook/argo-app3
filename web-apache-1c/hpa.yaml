@@ -1,16 +1,16 @@
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: fearsome-fish
-  namespace: app-foo-prd
-  labels:
-    app: fearsome-fish
-    env: prd
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: fearsome-fish
-  minReplicas: 3
-  maxReplicas: 6
-  targetCPUUtilizationPercentage: 60
+# apiVersion: autoscaling/v1
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: fearsome-fish
+#   namespace: app-foo-prd
+#   labels:
+#     app: fearsome-fish
+#     env: prd
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: fearsome-fish
+#   minReplicas: 3
+#   maxReplicas: 6
+#   targetCPUUtilizationPercentage: 60
