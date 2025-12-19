@@ -1,0 +1,14 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: fearsome-fish
+  namespace: app-foo-prd
+  labels:
+    app: fearsome-fish
+    env: prd
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: fearsome-fish
+      env: prd
